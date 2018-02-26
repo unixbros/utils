@@ -1,4 +1,4 @@
 LDFLAGS = -static
 CFLAGS  = -g
 
-all: logname env echo
+all: logname env echo cat
