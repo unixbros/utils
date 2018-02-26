@@ -1,0 +1,16 @@
+#!/bin/sh
+
+OUT=${1##*/}
+
+case "$#" in
+2)
+	echo ${OUT%%$2}
+	;;
+1)
+	echo $OUT
+	;;
+*)
+	exit 1
+	;;
+esac
+
