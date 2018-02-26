@@ -11,28 +11,18 @@ concat(FILE *ifp, FILE *ofp) {
 	}
 }
 
-void
-io(FILE *ifp, FILE *ofp) {
-
-	char buf[2048];
-
-	while((fgets(buf, sizeof(buf), ifp)) != NULL){
-		fputs(buf, ofp);
-	}
-}
-
 int
 main(int argc, char **argv) {
 	FILE *fp;
 
 	if (argc < 2) {
-		io(stdin, stdout);
+		concat(stdin, stdout);
 	}
 	else {
 		while(*++argv) {
 		
 			if( (strcmp(*argv, "-")) == 0)
-				io(stdin, stdout);
+				concat(stdin, stdout);
 			else if ((fp = fopen(*argv, "r")) != NULL) {
 				concat(fp, stdout);
 				fclose(fp);
