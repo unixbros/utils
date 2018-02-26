@@ -1,4 +1,4 @@
 LDFLAGS = -static
 CFLAGS  = -g
 
-all: logname
+all: logname env
